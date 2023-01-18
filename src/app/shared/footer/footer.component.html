@@ -11,21 +11,31 @@
         </ul>
         <p class="rk-footer__text rk-footer__copy "> <span class="ae-u-bold">© </span><span class="ae-u-bolder">{{anio}} MAYRA PORTFOLIO </span>All Right Reserved.</p>
       </div>
-      <div class="ae-grid__item item-lg-4 au-xs-ta-center"><a href="#0" class="rk-social-btn ">
+      <div class="ae-grid__item item-lg-4 au-xs-ta-center">
+        <!-- <a href="#0" class="rk-social-btn ">
           <svg>
             <use xlink:href="assets/img/symbols.svg#icon-facebook"></use>
-          </svg></a><a href="#0" class="rk-social-btn ">
+          </svg></a> -->
+
+        <a target="_blank" [href]="_infoPag.info.twitter" class="rk-social-btn ">
           <svg>
             <use xlink:href="assets/img/symbols.svg#icon-twitter"></use>
-          </svg></a><a href="#0" class="rk-social-btn ">
+          </svg></a>
+
+          <a target="_blank" [href]="_infoPag.info.instagram" class="rk-social-btn ">
           <svg>
             <use xlink:href="assets/img/symbols.svg#icon-pinterest"></use>
-          </svg></a><a href="#0" class="rk-social-btn ">
+          </svg></a>
+          
+          <a target="_blank" [href]="_infoPag.info.tumblr" class="rk-social-btn ">
           <svg>
             <use xlink:href="assets/img/symbols.svg#icon-tumblr"></use>
           </svg></a></div>
       <div class="ae-grid__item item-lg-4 au-xs-ta-center au-lg-ta-right">
-        <p class="rk-footer__text rk-footer__contact "> <span class="ae-u-bold">Email: </span><span class="ae-u-bolder"> <a href="#0" class="rk-dark-color ">mayranoe.ts@outlook.es </a></span></p>
+        <p class="rk-footer__text rk-footer__contact "> <span class="ae-u-bold">Email: </span><span class="ae-u-bolder">
+          
+          <a href="mailTo:{{ _infoPag.info.email }}" class="rk-dark-color "> {{ _infoPag.info.email }} </a></span></p>
+
         <p class="rk-footer__text rk-footer__by">Theme by <a href="http://pixeden.com" class="ae-u-bolder">Pixeden.</a></p>
       </div>
     </div>
