@@ -1,20 +1,14 @@
 <div class="ae-grid au-xs-ta-center au-mb-4">
-    <div class="ae-grid__item item-lg-4 ae-kappa au-mb-3"><img src="assets/img/team-1.jpg" alt="" class="au-mb-3">
-      <h5 class="ae-u-bolder au-mt-2">Robert T. Williams</h5>
-      <p class="ae-u-bolder au-mb-3">Graphic Designer</p>
-      <p class="au-lg-ta-left au-mb-3 au-pl-4 au-pr-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p><a href="#0" class="ae-u-bolder au-underline">@robertwilliams</a>
-    </div>
-    <div class="ae-grid__item item-lg-4 ae-kappa au-mb-3"><img src="assets/img/team-2.jpg" alt="" class="au-mb-3">
-      <h5 class="ae-u-bolder au-mt-2">Angelina B. Widow</h5>
-      <p class="ae-u-bolder au-mb-3">Founder / CEO</p>
-      <p class="au-lg-ta-left au-mb-3 au-pl-4 au-pr-4">Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.</p><a href="#0" class="ae-u-bolder au-underline">@angelinawidow</a>
-    </div>
-    <div class="ae-grid__item item-lg-4 ae-kappa au-mb-3"><img src="assets/img/team-3.jpg" alt="" class="au-mb-3">
-      <h5 class="ae-u-bolder au-mt-2">Patrick Anderson</h5>
-      <p class="ae-u-bolder au-mb-3">Art Director</p>
-      <p class="au-lg-ta-left au-mb-3 au-pl-4 au-pr-4">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><a href="#0" class="ae-u-bolder au-underline">@patrickanderson</a>
-    </div>
+  <div *ngFor="let persona of infoServ.equipo" class="ae-grid__item item-lg-4 ae-kappa au-mb-3">
+    <img [src]="persona.url" alt="" class="au-mb-3" style="height: 200px ; width: 200px ;">
+    <h5 class="ae-u-bolder au-mt-2">{{ persona.nombre }}</h5>
+    <p class="ae-u-bolder au-mb-3">{{ persona.subtitulo }}</p>
+    <p class="au-lg-ta-left au-mb-3 au-pl-4 au-pr-4">{{ persona.frase }}</p>
+    <a href="https://twitter.com/{{ persona.twitter }}" class="ae-u-bolder au-underline">{{ persona.twitter }}</a>
   </div>
+ 
+</div>
+
   <div class="ae-grid au-pt-2">
     <div class="ae-grid__item item-lg-8 item-lg--offset-2">
       <h4 class="ae-u-bolder">Title example</h4>
