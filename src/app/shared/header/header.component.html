@@ -11,37 +11,34 @@
         <use xlink:href="assets/img/symbols.svg#bar"></use>
       </svg>
     </label>
+    
     <div class="ae-container-fluid rk-topbar">
       <h1 class="rk-logo">
-        <a routerLink="home">{{ _infoPag.info.titulo }}<sup>tm</sup></a></h1>
+        <a routerLink="home">{{ _infoPag.info.titulo }}</a></h1>
       
         <nav class="rk-navigation">
-        <ul class="rk-menu" routerLinkActive="active">
-          <li class="rk-menu__item"><a routerLink=""class="rk-menu__link">Home</a>
+        <ul class="rk-menu">
+          <li routerLinkActive="active" class="rk-menu__item">
+            <a routerLink="home"class="rk-menu__link">Home</a>
           </li>
-          <li ><a href="portfolio.html" class="rk-menu__link">Portfolio</a>
-          </li>
-        
-          <li class="rk-menu__item"><a href="#0" class="rk-menu__link">Pages</a>
-            <nav class="rk-menu__sub">
-              <ul class="rk-container">
-                <li class="rk-menu__item"><a routerLink="about"class="rk-menu__link">About</a></li>
-                <li class="rk-menu__item"><a href="documentation.html" class="rk-menu__link">Documentation</a></li>
-                <li class="rk-menu__item"><a href="design-styles.html" class="rk-menu__link">Design Styles</a></li>
-              </ul>
-            </nav>
-          </li>
-          <li class="rk-menu__item"><a href="contact.html" class="rk-menu__link">Contact Us</a>
+
+          <li routerLinkActive="active" class="rk-menu__item">
+            <a routerLink="about"class="rk-menu__link">About</a>
           </li>
         </ul>
-        <form class="rk-search">
-          <input type="text" placeholder="Search" id="urku-search" class="rk-search-field">
+
+
+        <div class="rk-search">
+          <input type="text" 
+          (keyup.enter)="buscarProducto( txtBuscar.value)"  placeholder="Search" id="urku-search" class="rk-search-field" #txtBuscar>
+         
           <label for="urku-search">
             <svg>
               <use xlink:href="assets/img/symbols.svg#icon-search"></use>
             </svg>
           </label>
-        </form>
+        </div>
+        
       </nav>
     </div>
   </header>
