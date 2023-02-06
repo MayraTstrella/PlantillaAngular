@@ -31,11 +31,8 @@ export class InfoPaginaService {
      this.cargada = true;
      this.info = resp;
 
-     // console.log(resp);  Para mostrar todos los elementos del Json
     })
-//  .subscribe( (resp: any) => {
-//   console.log(resp.twitter);   Para mostrar un solo elemento
-//  })
+
   }
 
   private cargarEquipo() {
@@ -45,7 +42,6 @@ export class InfoPaginaService {
 
      this.equipo = resp;
 
-    //  console.log(resp); 
     })
   }
 

@@ -26,10 +26,10 @@ export class ProductosService {
     return new Promise<void>((resolve, reject) => {
       this.http.get<Producto[]>('https://app-angular-ef3a1-default-rtdb.firebaseio.com/productos_idx.json')
         .subscribe((resp) => {
-          //any
+        
           this.productos = resp;
           this.cargando = false;
-          console.log(resp);
+          // console.log(resp);
 
           resolve();
 
@@ -46,40 +46,38 @@ export class ProductosService {
 
   buscarProducto(termino: string) {
 
-    if ( this.productos.length === 0 ) {
-      // le cargo los productos
-      this.cargarProductos().then( () => {
-        // se va a ejecutar desp de tener los productos
-        //aplico el filtro
-        this.filtrarProductos( termino );
+    if (this.productos.length === 0) {
+
+      this.cargarProductos().then(() => {
+
+        this.filtrarProductos(termino);
       });
 
     } else {
-      // aplico el filtro
-      this.filtrarProductos( termino );
+
+      this.filtrarProductos(termino);
 
     }
 
-   
+
 
   }
 
 
- private filtrarProductos( termino: string ) {
+  private filtrarProductos(termino: string) {
 
-  this.productoFiltro = [];
-  // console.log(this.productos);
+    this.productoFiltro = [];
 
-  termino = termino.toLowerCase();
+    termino = termino.toLowerCase();
 
-  this.productos.forEach( prod => {
+    this.productos.forEach(prod => {
 
-    const nwTitulo = prod.titulo.toLowerCase();
+      const nwTitulo = prod.titulo.toLowerCase();
 
-    if (prod.categoria.indexOf( termino ) >= 0 || nwTitulo.indexOf( termino ) >= 0 ) {
-      this.productoFiltro.push( prod );
-    }
-  })
- }
+      if (prod.categoria.indexOf(termino) >= 0 || nwTitulo.indexOf(termino) >= 0) {
+        this.productoFiltro.push(prod);
+      }
+    })
+  }
 
 }
